@@ -52,3 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+//CRUD
+$route['admin/add_game'] = 'admin/data_game_console/tambah_game_aksi';
+$route['admin/upd_game'] = 'admin/data_game_console/update_game_aksi';
+$route['uploaded_img'] = 'assets/img_upload/';

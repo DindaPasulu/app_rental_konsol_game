@@ -368,12 +368,12 @@
                   <li><a href="utilities-subscribe.html">Subscribe</a></li>
                 </ul>
               </li>-->
-              <li><a class="nav-link" href="<?php echo base_url('admin/dashboard.php')?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
-              <li><a class="nav-link" href="<?php echo base_url('admin/data_game_console.php')?>"><i class="fas fa-gamepad"></i> <span>Data Game Console</span></a></li>
-              <li><a class="nav-link" href="<?php echo base_url('admin/data_type.php')?>"><i class="fas fa-grip-horizontal"></i> <span>Data Type</span></a></li>
-              <li><a class="nav-link" href="<?php echo base_url('admin/data_customer.php')?>"><i class="fas fa-users"></i> <span>Data Customer</span></a></li>
-              <li><a class="nav-link" href="<?php echo base_url('admin/transaksi.php')?>"><i class="fas fa-random"></i> <span>Transaksi</span></a></li>
-              <li><a class="nav-link" href="<?php echo base_url('admin/laporan.php')?>"><i class="fas fa-clipboard-list"></i> <span>Laporan</span></a></li>
+              <li><a class="nav-link" href="<?php echo base_url('admin/dashboard')?>"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
+              <li><a class="nav-link" href="<?php echo base_url('admin/data_game_console')?>"><i class="fas fa-gamepad"></i> <span>Data Game Console</span></a></li>
+              <li><a class="nav-link" href="<?php echo base_url('admin/data_type')?>"><i class="fas fa-grip-horizontal"></i> <span>Data Type</span></a></li>
+              <li><a class="nav-link" href="<?php echo base_url('admin/data_customer')?>"><i class="fas fa-users"></i> <span>Data Customer</span></a></li>
+              <li><a class="nav-link" href="<?php echo base_url('admin/transaksi')?>"><i class="fas fa-random"></i> <span>Transaksi</span></a></li>
+              <li><a class="nav-link" href="<?php echo base_url('admin/laporan')?>"><i class="fas fa-clipboard-list"></i> <span>Laporan</span></a></li>
             </ul>
 
             <!--<div class="mt-4 mb-4 p-3 hide-sidebar-mini">
