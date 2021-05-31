@@ -4,7 +4,7 @@
             <h1>Data Game Console</h1>
         </div>
 
-        <a href="<?php echo base_url('admin/data_game_console/tambah_game')?>" class="btn btn-primary mb-4">Tambah Data</a>
+        <a href="<?php echo base_url('admin/data_game_console/tambah_game')?>" class="btn btn-primary mb-6">Tambah Data</a>
         
         <!--menampilkan pesan 'Data telah ditambahkan'-->
         <?php echo $this->session->flashdata('message'); ?>

@@ -72,7 +72,7 @@
           </div>
         </form>
         <ul class="navbar-nav navbar-right">
-          <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
+          <!--<li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
             <div class="dropdown-menu dropdown-list dropdown-menu-right">
               <div class="dropdown-header">Messages
                 <div class="float-right">
@@ -196,11 +196,11 @@
                 <a href="#">View All <i class="fas fa-chevron-right"></i></a>
               </div>
             </div>
-          </li>
-          <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
-            <div class="dropdown-menu dropdown-menu-right">
+          </li>-->
+          <li class="nav-link">
+            <!--<img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">-->
+            <div class="d-sm-none d-lg-inline-block">Halo Admin <?php echo $this->session->userdata('nama') ?>!</div>
+            <!--<div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in 5 min ago</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
@@ -215,7 +215,7 @@
               <a href="#" class="dropdown-item has-icon text-danger">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
-            </div>
+            </div>-->
           </li>
         </ul>
       </nav>
@@ -374,6 +374,8 @@
               <li><a class="nav-link" href="<?php echo base_url('admin/data_customer')?>"><i class="fas fa-users"></i> <span>Data Customer</span></a></li>
               <li><a class="nav-link" href="<?php echo base_url('admin/transaksi')?>"><i class="fas fa-random"></i> <span>Transaksi</span></a></li>
               <li><a class="nav-link" href="<?php echo base_url('admin/laporan')?>"><i class="fas fa-clipboard-list"></i> <span>Laporan</span></a></li>
+              <li><a class="nav-link" href="<?php echo base_url('auth/ganti_password')?>"><i class="fas fa-lock"></i> <span>Change Password</span></a></li>
+              <li><a class="nav-link" href="<?php echo base_url('auth/logout')?>"><i class="fas fa-sign-out-alt text-danger"></i> <span class="text-danger">Logout</span></a></li>
             </ul>
 
             <!--<div class="mt-4 mb-4 p-3 hide-sidebar-mini">

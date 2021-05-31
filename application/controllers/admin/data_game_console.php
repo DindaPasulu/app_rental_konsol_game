@@ -35,8 +35,9 @@ class data_game_console extends CI_Controller{
             $gambar        = $_FILES['gambar']['name'];
             if($gambar=''){
             }else{
-                $config['upload_path']      = './assets/img_upload';
-                $config['allowed_types']    = 'jpg | jpeg | png | tiff';
+                //$image_path = realpath(APPPATH . './assets/img_upload/');
+                $config['upload_path']      = realpath(FCPATH.'img_upload');
+                $config['allowed_types']    = 'jpg | png';
 
                 $this->load->library('upload', $config);
                 if(!$this->upload->do_upload('gambar')){
@@ -94,8 +95,9 @@ class data_game_console extends CI_Controller{
             $status        = $this->input->post('status');
             $gambar        = $_FILES['gambar']['name'];
             if($gambar){
-                $config['upload_path']      = './assets/img_upload';
-                $config['allowed_types']    = 'jpg | jpeg | png | tiff';
+                //$image_path = realpath(APPPATH . './assets/img_upload/');
+                $config['upload_path']      = realpath(FCPATH.'img_upload');
+                $config['allowed_types']    = 'jpg | png';
 
                 $this->load->library('upload', $config);
 
@@ -134,6 +136,28 @@ class data_game_console extends CI_Controller{
         $this->form_validation->set_rules('warna','Warna','required');
         $this->form_validation->set_rules('series','Series','required');
         $this->form_validation->set_rules('status','Status','required');
+    }
+
+    public function detail_game($id)
+    {
+        $data['detail'] = $this->rental_model->get_id_gc($id);
+        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/sidebar');
+        $this->load->view('admin/detail_game',$data);
+        $this->load->view('templates_admin/footer');
+    }
+
+    public function delete_game($id)
+    {
+        $where = array('id_gc' => $id);
+        $this->rental_model->delete_data($where, 'game_console');
+        $this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Data Game Console Berhasil Dihapus! </strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>');
+        redirect('admin/data_game_console');
     }
 }
 

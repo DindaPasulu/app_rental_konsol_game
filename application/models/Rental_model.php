@@ -13,6 +13,42 @@ class Rental_model extends CI_Model{
     {
         $this->db->update($table, $data, $where);
     }
+
+    public function delete_data($where, $table)
+    {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+
+    public function get_id_gc($id)
+    {
+        $hasil = $this->db->where('id_gc', $id)->get('game_console');
+        if($hasil->num_rows() > 0){
+            return $hasil->result();
+        }else{
+            return false;
+        }
+    }
+
+    public function check_login()
+    {
+        $username = set_value('username');
+        $password = set_value('password');
+
+        $result   = $this->db->where('username',$username)->where('password',md5($password))->limit(1)->get('customer');
+
+        if($result->num_rows() > 0) {
+            return $result->row();
+        }else{
+            return FALSE;
+        }
+    }
+
+    public function update_password($where,$data,$table)
+    {
+        $this->db->where($where);
+        $this->db->update($table,$data);
+    }
 }
 
 ?>

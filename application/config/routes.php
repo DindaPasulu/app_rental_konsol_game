@@ -54,6 +54,10 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //CRUD
-$route['admin/add_game'] = 'admin/data_game_console/tambah_game_aksi';
-$route['admin/upd_game'] = 'admin/data_game_console/update_game_aksi';
+$route['admin/add_game'] = 'admin/data_game_console/tambah_game_aksi/';
+$route['add_customer'] = 'admin/data_customer/tambah_customer_aksi/';
+$route['admin/upd_game'] = 'admin/data_game_console/update_game_aksi/';
+$route['admin/add_type'] = 'admin/data_type/tambah_type_aksi/';
+$route['update_type'] = 'admin/data_type/update_type_aksi/';
+$route['delete_type'] = 'admin/data_type/delete_type/';
 $route['uploaded_img'] = 'assets/img_upload/';
