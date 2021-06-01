@@ -43,6 +43,14 @@
                                 <td><?php echo $dt->warna ?></td>
                             </tr>
                             <tr>
+                                <td>Harga Sewa</td>
+                                <td>Rp<?php echo number_format($dt->harga,0,',','.') ?></td>
+                            </tr>
+                            <tr>
+                                <td>Denda</td>
+                                <td>Rp<?php echo number_format($dt->denda,0,',','.') ?></td>
+                            </tr>
+                            <tr>
                                 <td>Status</td>
                                 <td>
                                     <?php 

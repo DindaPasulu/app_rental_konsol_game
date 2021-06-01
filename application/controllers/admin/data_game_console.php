@@ -32,6 +32,8 @@ class data_game_console extends CI_Controller{
             $warna         = $this->input->post('warna');
             $series        = $this->input->post('series');
             $status        = $this->input->post('status');
+            $harga         = $this->input->post('harga');
+            $denda         = $this->input->post('denda');
             $gambar        = $_FILES['gambar']['name'];
             if($gambar=''){
             }else{
@@ -53,6 +55,8 @@ class data_game_console extends CI_Controller{
                 'warna'           => $warna,
                 'series'          => $series,
                 'status'          => $status,
+                'harga'           => $harga,
+                'denda'           => $denda,
                 'gambar'          => $gambar
             );
 
@@ -93,6 +97,8 @@ class data_game_console extends CI_Controller{
             $warna         = $this->input->post('warna');
             $series        = $this->input->post('series');
             $status        = $this->input->post('status');
+            $harga         = $this->input->post('harga');
+            $denda         = $this->input->post('denda');
             $gambar        = $_FILES['gambar']['name'];
             if($gambar){
                 //$image_path = realpath(APPPATH . './assets/img_upload/');
@@ -114,7 +120,10 @@ class data_game_console extends CI_Controller{
                 'merk'            => $merk,
                 'warna'           => $warna,
                 'series'          => $series,
-                'status'          => $status
+                'status'          => $status,
+                'harga'           => $harga,
+                'denda'           => $denda,
+                //'gambar'          => $gambar
             );
 
             $where = array('id_gc' => $id);
@@ -136,6 +145,8 @@ class data_game_console extends CI_Controller{
         $this->form_validation->set_rules('warna','Warna','required');
         $this->form_validation->set_rules('series','Series','required');
         $this->form_validation->set_rules('status','Status','required');
+        $this->form_validation->set_rules('harga','Harga','required');
+        $this->form_validation->set_rules('denda','Denda','required');
     }
 
     public function detail_game($id)

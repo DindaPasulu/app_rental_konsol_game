@@ -24,8 +24,10 @@
                                     <h4 class="fw-bolder">
                                         <a href="#"><?php echo $gc->merk?> <?php echo $gc->series?></a>
                                     </h4>
-                                    <h5 class="fw-bolder">Kode Type : <?php echo $gc->kode_type?></a>
-                                    </h5>
+                                    <h6 class="fw-bolder">Kode Type : <?php echo $gc->kode_type?></a>
+                                    </h6>
+                                    <h6>Harga Sewa : Rp<?php echo number_format($gc->harga,0,',','.') ?>/hari</a>
+                                    </h6>
                                 </div>
                             </div>
                             <!-- Product actions-->

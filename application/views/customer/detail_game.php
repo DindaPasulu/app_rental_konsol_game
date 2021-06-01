@@ -26,6 +26,14 @@
                                 <td><?php echo $dt->warna ?></td>
                             </tr>
                             <tr>
+                                <th>Harga Sewa</th>
+                                <td>Rp<?php echo number_format($dt->harga, 0,',','.') ?></td>
+                            </tr>
+                            <tr>
+                                <th>Denda</th>
+                                <td>Rp<?php echo number_format($dt->denda, 0,',','.') ?></td>
+                            </tr>
+                            <tr>
                                 <th>Status</th>
                                 <td>
                                     <?php if($dt->status == '1'){
