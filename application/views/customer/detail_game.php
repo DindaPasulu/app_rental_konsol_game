@@ -5,7 +5,7 @@
             <?php foreach($detail as $dt) : ?>
                 <div class="row">
                     <div class="col-md-6">
-                        <img style="width: 90%" src="<?php echo base_url('assets/img_upload/'.$dt->gambar) ?>">
+                        <img style="width: 90%" src="<?php echo base_url('assets/upload/'.$dt->gambar) ?>">
                     </div>
                     <div class="col-md-6">
                         <table class="table">

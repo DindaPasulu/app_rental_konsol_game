@@ -22,10 +22,6 @@ class data_type extends CI_Controller{
     public function tambah_type_aksi()
     {
         $this->_rules();
-
-        if($this->form_validation->run() == FALSE){
-            $this->tambah_type();
-        }else{
             $kode_type          = $this->input->post('kode_type');
             $nama_type          = $this->input->post('nama_type');
 
@@ -42,7 +38,6 @@ class data_type extends CI_Controller{
                 </button>
             </div>');
             redirect('admin/data_type');
-        }
     }
 
     public function update_type($id)
@@ -59,14 +54,11 @@ class data_type extends CI_Controller{
     {
         $this->_rules();
 
-        if($this->form_validation->run() == FALSE){
-            $id = $this->input->post('id_type');
-            $this->update_type($id);
-        }else{
+        
             $id             = $this->input->post('id_type');
             $kode_type      = $this->input->post('kode_type');
             $nama_type      = $this->input->post('nama_type');
-        }
+        
 
         $data = array(
             'kode_type'     => $kode_type,

@@ -26,8 +26,7 @@
                         <tr>
                             <td><?php echo $no++ ?></td>
                             <td>
-                                <img width="60px" src="<?php echo base_url(). 
-                                'uploaded_image'.$gc->gambar ?>">
+                                <img width="100px" src="<?php echo base_url(). './assets/upload/'.$gc->gambar ?>">
                             </td>
                             <td><?php echo $gc->kode_type ?></td>
                             <td><?php echo $gc->merk ?></td>

@@ -19,7 +19,7 @@
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" type="email" class="form-control" name="email" value="<?php echo $cs->email ?>>
+            <input id="email" type="email" class="form-control" name="email" value="<?php echo $cs->email ?>">
             <?php echo form_error('email','<span class="text-small text-danger">','</span>')?>
         </div>
         <div class="form-group">

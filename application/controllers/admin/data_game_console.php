@@ -24,9 +24,6 @@ class data_game_console extends CI_Controller{
     {
         $this->_rules();
 
-        if($this->form_validation->run() == FALSE){
-            $this->tambah_game();
-        }else{
             $kode_type     = $this->input->post('kode_type');
             $merk          = $this->input->post('merk');
             $warna         = $this->input->post('warna');
@@ -35,20 +32,11 @@ class data_game_console extends CI_Controller{
             $harga         = $this->input->post('harga');
             $denda         = $this->input->post('denda');
             $gambar        = $_FILES['gambar']['name'];
-            if($gambar=''){
-            }else{
-                //$image_path = realpath(APPPATH . './assets/img_upload/');
-                $config['upload_path']      = realpath(FCPATH.'img_upload');
-                $config['allowed_types']    = 'jpg | png';
-
-                $this->load->library('upload', $config);
-                if(!$this->upload->do_upload('gambar')){
-                    echo "Gambar Gagal Di Upload!";
-                }else{
-                    $gambar=$this->upload->data('file_name');
-                }
-            }
-
+            $image_path    = APPPATH.'../assets/upload/';
+            $file_tmp      = $_FILES['gambar']['tmp_name'];
+            move_uploaded_file($file_tmp, $image_path.$gambar);
+            echo $gambar; 
+            
             $data = array(
                 'kode_type'       => $kode_type,
                 'merk'            => $merk,
@@ -68,8 +56,8 @@ class data_game_console extends CI_Controller{
                 </button>
             </div>');
             redirect('admin/data_game_console');
-        }
     }
+
 
     public function update_game($id){
         $where = array('id_gc' => $id);
@@ -83,14 +71,9 @@ class data_game_console extends CI_Controller{
         $this->load->view('templates_admin/footer');
     }
 
-    public function update_game_aksi()
+    public function update_game_aksi($id)
     {
         $this->_rules();
-
-        if($this->form_validation->run() == FALSE){
-            $id = $this->input->post('id_gc');
-            $this->update_game($id);
-        }else{
             $id            = $this->input->post('id_gc');
             $kode_type     = $this->input->post('kode_type');
             $merk          = $this->input->post('merk');
@@ -100,20 +83,10 @@ class data_game_console extends CI_Controller{
             $harga         = $this->input->post('harga');
             $denda         = $this->input->post('denda');
             $gambar        = $_FILES['gambar']['name'];
-            if($gambar){
-                //$image_path = realpath(APPPATH . './assets/img_upload/');
-                $config['upload_path']      = realpath(FCPATH.'img_upload');
-                $config['allowed_types']    = 'jpg | png';
-
-                $this->load->library('upload', $config);
-
-                if($this->upload->do_upload('gambar')){
-                    $gambar=$this->upload->data('file_name');
-                    $this->db->set('gambar',$gambar);
-                }else{
-                    echo $this->upload->display_errors();
-                }
-            }
+            $image_path    = APPPATH.'../assets/upload/';
+            $file_tmp      = $_FILES['gambar']['tmp_name'];
+            move_uploaded_file($file_tmp, $image_path.$gambar);
+            echo $gambar; 
 
             $data = array(
                 'kode_type'       => $kode_type,
@@ -123,7 +96,7 @@ class data_game_console extends CI_Controller{
                 'status'          => $status,
                 'harga'           => $harga,
                 'denda'           => $denda,
-                //'gambar'          => $gambar
+                'gambar'          => $gambar
             );
 
             $where = array('id_gc' => $id);
@@ -135,7 +108,6 @@ class data_game_console extends CI_Controller{
                 </button>
             </div>');
             redirect('admin/data_game_console');
-        }
     }
 
     public function _rules()

@@ -10,7 +10,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-5">
-                        <img src="<?php echo base_url().'assets/img_upload'.$dt->gambar ?>">
+                        <img width="200px" src="<?php echo base_url(). './assets/upload/'.$dt->gambar ?>">
                     </div>
                     <div class="col-md-8">
                         <table class="table">

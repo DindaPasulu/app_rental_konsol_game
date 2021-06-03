@@ -17,14 +17,14 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="<?php echo base_url('assets/img_upload/'.$gc->gambar)?> "
-                            style="width:160px; height:130px" alt=""/>
+                            <img class="card-img-top center" src="<?php echo base_url(). './assets/upload/'.$gc->gambar ?> "
+                            style="width:160px; height:130px ;margin-left:auto; margin-right:auto" alt=""/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product name-->
                                     <h4 class="fw-bolder">
-                                        <a href="#"><?php echo $gc->merk?> <?php echo $gc->series?></a>
+                                        <a><?php echo $gc->merk?> <?php echo $gc->series?></a>
                                     </h4>
                                     <h6 class="fw-bolder">Kode Type : <?php echo $gc->kode_type?></a>
                                     </h6>

@@ -4,7 +4,7 @@
             <h1>Form Tambah Data Customer</h1>
         </div>
     </section>
-    <form method="POST" action="<?php echo base_url('add_customer') ?>">
+    <form method="POST" action="<?php echo base_url('admin/data_customer/tambah_customer') ?>">
         <div class="form-group">
             <label>Nama</label>
             <input type="text" name="nama" class="form-control">

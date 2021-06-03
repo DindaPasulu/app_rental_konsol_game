@@ -24,15 +24,12 @@ class data_customer extends CI_Controller
     {
         $this->_rules();
 
-        if($this->form_validation->run() == FALSE){
-            $this->tambah_customer();
-        }else{
             $nama         = $this->input->post('nama');
             $email        = $this->input->post('email');
             $username     = $this->input->post('username');
             $alamat       = $this->input->post('alamat');
             $gender       = $this->input->post('gender');
-            $notelp       = $this->input->post('notelp');
+            $notelp       = $this->input->post('no_telp');
             $password     = md5($this->input->post('password'));
 
             $data = array(
@@ -41,7 +38,7 @@ class data_customer extends CI_Controller
                 'username'  => $username,
                 'alamat'    => $alamat,
                 'gender'    => $gender,
-                'notelp'    => $notelp,
+                'no_telp'   => $notelp,
                 'password'  => $password
             );
 
@@ -53,7 +50,6 @@ class data_customer extends CI_Controller
                 </button>
             </div>');
             redirect('admin/data_customer');
-        }
     }
 
     public function update_customer($id)
@@ -71,17 +67,13 @@ class data_customer extends CI_Controller
     {
         $this->_rules();
 
-        if($this->form_validation->run() == FALSE){
-            $id = $this->input->post('id_customer');
-            $this->update_customer($id);
-        }else{
             $id           = $this->input->post('id_customer');
             $nama         = $this->input->post('nama');
             $email        = $this->input->post('email');
             $username     = $this->input->post('username');
             $alamat       = $this->input->post('alamat');
             $gender       = $this->input->post('gender');
-            $notelp       = $this->input->post('notelp');
+            $notelp       = $this->input->post('no_telp');
             $password     = md5($this->input->post('password'));
 
             $data = array(
@@ -90,7 +82,7 @@ class data_customer extends CI_Controller
                 'username'  => $username,
                 'alamat'    => $alamat,
                 'gender'    => $gender,
-                'notelp'    => $notelp,
+                'no_telp'   => $notelp,
                 'password'  => $password
             );
             $where = array('id_customer' => $id);
@@ -103,14 +95,13 @@ class data_customer extends CI_Controller
                 </button>
             </div>');
             redirect('admin/data_customer');
-        }
     }
 
     public function delete_customer($id)
     {
         $where = array('id_customer' => $id);
         $this->rental_model->delete_data($where, 'customer');
-        $this->session->set_flashdata('message','<div class="alert alert-success alert-dismissible fade show" role="alert">
+        $this->session->set_flashdata('message','<div class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Data Customer Berhasil Dihapus! </strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
