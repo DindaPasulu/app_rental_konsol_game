@@ -12,7 +12,7 @@ class rental extends CI_Controller
 
     public function tambah_rental_aksi()
     {
-        $id_customer            = $this->input->post('id_customer');
+        $id_customer            = $this->session->userdata('id_customer');
         $id_gc                  = $this->input->post('id_gc');
         $tanggal_rental         = $this->input->post('tanggal_rental');
         $tanggal_kembali        = $this->input->post('tanggal_kembali');
@@ -35,8 +35,7 @@ class rental extends CI_Controller
 
         $status = array('status' => '0');
         $id = array(
-            'id_gc' => $id_gc,
-            'id_customer' => $id_customer
+            'id_gc' => $id_gc
         );
 
         $this->rental_model->update_data('game_console', $status, $id);

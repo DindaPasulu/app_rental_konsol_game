@@ -8,7 +8,6 @@
                 <form method="POST" action="<?php echo base_url('customer/rental/tambah_rental_aksi/') ?>">
                     <div class="form-group">
                         <label>Harga Sewa per Hari</label>
-                        <input type="hidden" name="id_customer" value="<?php echo $dt->id_customer ?>">
                         <input type="hidden" name="id_gc" value="<?php echo $dt->id_gc ?>">
                         <input type="text" name="harga" class="form-control"
                             value="<?php echo $dt->harga ?>" readonly>
