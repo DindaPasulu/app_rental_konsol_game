@@ -1,4 +1,4 @@
-<footer class="main-footer">
+<footer class="main-footer fixed-bottom">
         <div class="footer-left">
           Copyright &copy; 2021 <div class="bullet"></div> By <a href="">Kelompok 1</a>
         </div>

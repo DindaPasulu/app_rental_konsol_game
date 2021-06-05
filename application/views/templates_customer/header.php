@@ -25,7 +25,7 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">Shop</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#"  role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#!">All Products</a></li>
                                 <li><hr class="dropdown-divider" /></li>
@@ -42,14 +42,22 @@
                                 <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                             </button>
                             <li class="nav-item"><a class="nav-link" href="<?php echo base_url('register')?>">Register</a></li>
-                            <li class="nav-item">
-                            <?php if($this->session->userdata('nama')) { ?>
-                                <a class="nav-link" href="<?php echo base_url('auth/logout') ?>">Halo <?php echo $this->session->userdata('nama') ?> <span class="
-                                btn btn-sm btn-warning">Logout</span></a>
-                            <?php } else { ?>
-                                <a class="nav-link" href="<?php echo base_url('auth/login') ?>"><span class="
-                                btn btn-sm btn-success">Login</span></a>
-                            <?php } ?> 
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Halo <?php echo $this->session->userdata('nama') ?></a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#!">Profile</a></li>
+                                    <li><a class="dropdown-item" href="<?php echo base_url('customer/transaksi') ?>">My Order</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li>
+                                        <?php if($this->session->userdata('nama')) { ?>
+                                            <a href="<?php echo base_url('auth/logout') ?>" class="dropdown-item has-icon text-danger">
+                                                <span class="btn btn-sm btn-warning"><i class="fas fa-sign-out-alt"></i> Logout</span></a>
+                                        <?php } else { ?>
+                                            <a href="<?php echo base_url('auth/logout') ?>" class="dropdown-item has-icon text-danger">
+                                                <span class="btn btn-sm btn-success"><i class="fas fa-sign-in"></i> Login</span></a>
+                                        <?php } ?>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </form>

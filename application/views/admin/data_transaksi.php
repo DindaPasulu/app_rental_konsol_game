@@ -28,7 +28,6 @@
                     <td><?php echo date('d/m/Y',strtotime($tr->tanggal_kembali)) ?></td>
                     <td>Rp<?php echo number_format($tr->harga,0,',','.') ?></td>
                     <td>Rp<?php echo number_format($tr->denda,0,',','.') ?></td>
-                    <td><?php echo date('d/m/Y',strtotime($tr->tanggal_pengembalian)) ?></td>
                     <td>
                         <?php 
                             if($tr->tanggal_pengembalian == "0000-00-00"){
@@ -62,8 +61,12 @@
                                     echo "-";
                                 }else{ ?>
                                     <div class="row">
-                                        <a class="btn btn-sm btn-success" href="<?php echo base_url('admin/transaksi/transaksi_selesai') ?>">
-                                            <i class="fas fa-check"></i></a>
+                                        <a class="btn btn-sm btn-success mr-1" href="<?php echo base_url('admin/transaksi/transaksi_selesai') ?>">
+                                            <i class="fas fa-check"></i>
+                                        </a>
+                                        <a class="btn btn-sm btn-danger" href="<?php echo base_url('admin/transaksi/transaksi_batal') ?>">
+                                            <i class="fas fa-times"></i>
+                                        </a>
                                     </div>
                              <?php   } ?>
                     </td>
