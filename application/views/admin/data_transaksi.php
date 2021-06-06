@@ -39,7 +39,7 @@
                     </td>
                     <td>
                         <?php 
-                             if($tr->status == "1"){
+                             if($tr->status_pengembalian == "Kembali"){
                                  echo "Kembali";
                              }else{
                                  echo "Belum Kembali";
@@ -48,10 +48,10 @@
                     </td>
                     <td>
                         <?php 
-                             if($tr->status == "1"){
-                                 echo "Kembali";
+                             if($tr->status_rental == "Selesai"){
+                                 echo "Selesai";
                              }else{
-                                 echo "Belum Kembali";
+                                 echo "Belum Selesai";
                              }
                         ?>
                     </td>
@@ -61,10 +61,10 @@
                                     echo "-";
                                 }else{ ?>
                                     <div class="row">
-                                        <a class="btn btn-sm btn-success mr-1" href="<?php echo base_url('admin/transaksi/transaksi_selesai') ?>">
+                                        <a class="btn btn-sm btn-success mr-1" href="<?php echo base_url('admin/data_transaksi/transaksi_selesai/'.$tr->id_rental) ?>">
                                             <i class="fas fa-check"></i>
                                         </a>
-                                        <a class="btn btn-sm btn-danger" href="<?php echo base_url('admin/transaksi/transaksi_batal') ?>">
+                                        <a class="btn btn-sm btn-danger" href="<?php echo base_url('admin/data_transaksi/transaksi_batal/'.$tr->id_rental) ?>">
                                             <i class="fas fa-times"></i>
                                         </a>
                                     </div>

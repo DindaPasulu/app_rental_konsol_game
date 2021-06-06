@@ -13,10 +13,9 @@ class data_customer extends CI_Controller
 
     public function tambah_customer()
     {
-        $data['customer'] = $this->rental_model->get_data('customer')->result();
         $this->load->view('templates_admin/header');
         $this->load->view('templates_admin/sidebar');
-        $this->load->view('admin/form_tambah_customer', $data);
+        $this->load->view('admin/form_tambah_customer');
         $this->load->view('templates_admin/footer');
     }
 
@@ -24,6 +23,9 @@ class data_customer extends CI_Controller
     {
         $this->_rules();
 
+        if($this->form_validation->run() == FALSE){
+            $this->tambah_customer();
+        }else{
             $nama         = $this->input->post('nama');
             $email        = $this->input->post('email');
             $username     = $this->input->post('username');
@@ -50,6 +52,7 @@ class data_customer extends CI_Controller
                 </button>
             </div>');
             redirect('admin/data_customer');
+        }
     }
 
     public function update_customer($id)

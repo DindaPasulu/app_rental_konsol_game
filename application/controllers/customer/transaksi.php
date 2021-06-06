@@ -10,6 +10,16 @@ class transaksi extends CI_Controller{
             $this->load->view('customer/transaksi',$data);
             $this->load->view('templates_customer/footer');
     }
+
+    public function pembayaran($id)
+    {
+        $data['transaksi'] = $this->db->query("SELECT * FROM transaksi tr, game_console gc, customer cs 
+            WHERE tr.id_gc=gc.id_gc AND tr.id_customer=cs.id_customer AND tr.id_rental='$id' 
+            ORDER BY id_rental DESC")->result();
+        $this->load->view('templates_customer/header');
+        $this->load->view('customer/pembayaran',$data);
+        $this->load->view('templates_customer/footer');
+    }
 }
 
 ?>

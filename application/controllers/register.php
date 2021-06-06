@@ -6,10 +6,12 @@ class register extends CI_Controller{
     {
         $this->_rules();
 
-            $this->load->view('templates_admin/header');
+        if($this->form_validation->run() == FALSE){
+            
+            $this->load->view('templates_customer/header');
             $this->load->view('register_form');
-            $this->load->view('templates_admin/footer');
-
+            $this->load->view('templates_customer/footer');
+        }else{
             $nama         = $this->input->post('nama');
             $email        = $this->input->post('email');
             $username     = $this->input->post('username');
@@ -37,6 +39,7 @@ class register extends CI_Controller{
                 </button>
             </div>');
             redirect('auth/login');
+        }
     }
     
     public function _rules()
