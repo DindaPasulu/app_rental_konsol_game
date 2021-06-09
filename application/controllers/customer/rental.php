@@ -4,10 +4,17 @@ class rental extends CI_Controller
 {
     public function tambah_rental($id)
     {
-        $data['detail'] = $this->rental_model->get_id_gc($id);
-        $this->load->view('templates_customer/header');
-        $this->load->view('customer/tambah_rental',$data);
-        $this->load->view('templates_customer/footer');
+        if($this->rental_model->logged_id())
+        {
+            $data['detail'] = $this->rental_model->get_id_gc($id);
+            $this->load->view('templates_customer/header');
+            $this->load->view('customer/tambah_rental',$data);
+            $this->load->view('templates_customer/footer');        
+
+        }else{
+            //jika session belum terdaftar, maka redirect ke halaman login
+            redirect('auth/login');
+        }
     }
 
     public function tambah_rental_aksi()

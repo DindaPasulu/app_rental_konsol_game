@@ -30,6 +30,11 @@ class Rental_model extends CI_Model{
         }
     }
 
+    function logged_id()
+    {
+        return $this->session->userdata('id_customer');
+    }
+
     public function check_login()
     {
         $username = set_value('username');
