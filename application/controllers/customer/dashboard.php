@@ -10,6 +10,13 @@
             $this->load->view('templates_customer/footer');
         }
 
+        public function about()
+        {
+            $this->load->view('templates_customer/header');
+            $this->load->view('customer/about');
+            $this->load->view('templates_customer/footer');
+        }
+
         public function detail_game($id)
         {
             $data['detail'] = $this->rental_model->get_id_gc($id);
